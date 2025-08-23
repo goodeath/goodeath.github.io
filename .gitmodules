@@ -1,0 +1,12 @@
+[submodule "website/themes/loveit"]
+	path = website/themes/loveit
+	url = https://github.com/dillonzq/LoveIt
+[submodule "website/themes/enchanted-lowkey"]
+	path = website/themes/enchanted-lowkey
+	url = https://github.com/nixentric/Lowkey-Hugo-Theme.git
+[submodule "website/themes/LoveIt"]
+	path = website/themes/LoveIt
+	url = https://github.com/dillonzq/LoveIt
+[submodule "docs/themes/LoveIt"]
+	path = docs/themes/LoveIt
+	url = https://github.com/dillonzq/LoveIt
