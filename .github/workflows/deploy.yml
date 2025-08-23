@@ -31,13 +31,13 @@ jobs:
 
       # 4. Build do Hugo
       - name: Build Hugo site
-        run: hugo --minify --source docs
+        run: hugo --minify
 
       # 5. Deploy para gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/public
+          publish_dir: ./public
           publish_branch: gh-pages
 
