@@ -1,0 +1,43 @@
+name: Hugo Deploy with Submodule
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checa o código e inicializa submódulos
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # <--- isso garante que o tema seja puxado
+
+      # 2. Instala Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.128.0' # sua versão do Hugo
+          extended: true
+
+      # 3. Configura Git
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 4. Build do Hugo
+      - name: Build Hugo site
+        run: hugo --minify --source docs
+
+      # 5. Deploy para gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+
