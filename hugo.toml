@@ -5,6 +5,12 @@ title = "Alex Morte"
 languageCode = "en-us"
 languageName = "English"
 
+[pagination]
+  disableAliases = false
+  pagerSize = 10
+  path = "page"
+
+
 [params]
   description = "Alex Morte Dev"
   [params.header]
@@ -24,54 +30,31 @@ languageName = "English"
     weight = 1
     identifier = "posts"
     # you can add extra information before the name (HTML format is supported), such as icons
-
     pre = ""
-
     # you can add extra information after the name (HTML format is supported), such as icons
-
     post = ""
-
     name = "Posts"
-
     url = "/posts/"
-
     # title will be shown when you hover on this menu link
-
     title = ""
 
   [[menu.main]]
-
     weight = 2
-
     identifier = "tags"
-
     pre = ""
-
     post = ""
-
     name = "Tags"
-
     url = "/tags/"
-
     title = ""
 
   [[menu.main]]
-
     weight = 3
-
     identifier = "categories"
-
     pre = ""
-
     post = ""
-
     name = "Categories"
-
     url = "/categories/"
-
     title = ""
-
-
 
 # Markup related configuration in Hugo
 
